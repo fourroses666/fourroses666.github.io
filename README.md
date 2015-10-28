@@ -1,3 +1,3 @@
 # MY PERSONAL STUFF..
 
-<a href="fourroses666.github.io">fourroses666.github.io</a>
+Live preview: <a href="http://fourroses666.github.io" target="_blank">http://fourroses666.github.io</a>
