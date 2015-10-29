@@ -1,31 +1,80 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <!--[if lt IE 9]>
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <title>Index of my scripts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index of my personal scripts</title>
+    <link rel="stylesheet" href="css/styles.css">
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="wrapper">
-    <div class="center">
 
-        <header>
-          <h1>Home</h1>
-          <h2>Personal scripts and more..</h2>
-        </header>
-
-        <section class="main">
-			<p>Here a list of scripts..</p>
+    <header class="header">
+		<h1 class="center">My great index..</h1>
+    </header>
+	  
+	<nav class="nav">
+		<div class="center">
+			<ul>
+				<li><a href="http://fourroses666.github.io">Home</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</nav>
+		
+    <main class="main">
+		<section class="filters">
+			<div class="center">
+				<span class="filter active" data-filter="all">All</span>
+				<span class="filter" data-filter=".css">CSS</span>
+				<span class="filter" data-filter=".js">JS</span>
+			</div>
+		</section>
+		
+        <section class="center items" id="filteren">
+		
+            <div class="item css mix">
+				<a href="/">
+					<h2>Hello</h2>
+					Soon some more..
+				</a>
+            </div>
+			
         </section>
-
-        <footer>
-			Check on <a href="https://pages.github.com">GitHub</a>.
-        </footer>
-
-    </div>
+	
+	</main>
+	
+	<footer class="footer">
+		<div class="center">
+			<ul class="links">
+				<li>&copy; Copyright 2015</li>
+				<li><a href="https://github.com/fourroses666" target="_blank">GitHub</a></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</footer>
+	
 </div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mixitup.min.js"></script>
+<script>
+	$(function(){
+		$('#filteren').mixItUp({
+			animation: {
+				animateResizeContainer: false,
+				effects: 'fade'
+			}
+		});	
+	});
+	$(function() { 
+		$('.filter').click(function(){
+			$('.filters .filter').removeClass("active");
+			$(this).addClass('active');
+		});
+	});
+</script>
+
 </body>
 </html>
