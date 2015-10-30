@@ -5,46 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sticky footer</title>
 	<link href="http://fourroses666.github.io/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <!-- needed for demo.. -->
-    <link href="../../css/styles.css" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<script src="http://fourroses666.github.io/js/prettify.js"></script>
-    <!-- end needed for demo.. -->
-	<style>
-		html, body{height:100%;}
-		.wrapper{min-height:100%; position:relative;}
-		.main{padding-bottom:54px;}
-		.footer{height:54px; line-height:54px; position:absolute; bottom:0; left:0; right:0;}
+	<style>		
+		html{position:relative; min-height:100%;}
+		body{margin-bottom:60px;}
+		.footer{position:absolute; bottom:0; left:0; right:0; height:54px;}
 	</style>
 </head>
 <body>
-<div class="wrapper">
 
-    <main class="main">
-        <div class="center">
-            <h1>Lorem ipsum..</h1>
-            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p> 
-            <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum.</p>
-            
-			<h2>CSS</h2>
+<main class="main">
+    <div class="center">
+    
+        <h1>Some sticky footer</h1>
+        <p>Just scroll the page and check the result..</p><br>
+        
+        <h2>CSS</h2>
 			
-<pre class="prettyprint">
-html,body {height:100%;}
-.wrapper {min-height:100%; position:relative;}
-.main {padding-bottom:54px;}
-.footer {height:54px; line-height:54px; position:absolute; bottom:0; left:0; right:0;}
-</pre>
+<textarea id="css" name="css">
+ html{position:relative; min-height:100%;}
+ body{margin-bottom:60px;}
+ .footer{position:absolute; bottom:0; left:0; right:0; height:54px;}
+</textarea>
 
+			<br>
 			<h2>HTML</h2>
-<pre class="prettyprint">&lt;div class=&quot;wrapper&quot;&gt;<br>	&lt;main class=&quot;main&quot;&gt;main&lt;/main&gt;<br>	&lt;footer class=&quot;footer&quot;&gt;footer&lt;/footer&gt;<br>&lt;/div&gt;</pre>
-        </div>	
-	</main>
-	
-	<footer class="footer">
-		<div class="center">My sticky footer - <a href="http://fourroses666.github.io" title="Back to the Index">Home</a></div>
-	</footer>
-	
-</div>
+            
+<textarea id="html" name="html">
+ <footer class="footer">footer</footer>
+</textarea>
+            
+    </div>
+    <div class="clear"></div>	
+</main>
+
+<footer class="footer">
+    <div class="center">My sticky footer - <a href="http://fourroses666.github.io" title="Back to the Index">Home</a></div>
+</footer>
+
+
+<!-- NEEDED FOR DEMO -->
+<link href="http://fourroses666.github.io/css/styles.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="http://fourroses666.github.io/css/codemirror.css" rel="stylesheet">
+<script src="http://fourroses666.github.io/js/codemirror.js"></script>
+<script src="http://fourroses666.github.io/js/xml.js"></script>
+<script src="http://fourroses666.github.io/js/css.js"></script>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("html"), {
+        mode: 'xml',
+        selectionPointer: true,
+        lineNumbers: true
+    });
+    var editor = CodeMirror.fromTextArea(document.getElementById("css"), {
+        mode: 'css',
+        lineNumbers: true
+    });
+</script>
 
 </body>
 </html>
