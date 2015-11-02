@@ -25,22 +25,9 @@
 		}, 250);
 	</script>
 	<style>		
-		html {
-		  position: relative;
-		  min-height: 100%;
-		}
-		.main {
-		  overflow: hidden;
-		}
-		.footer {
-		  position: absolute;
-		  bottom: 0;
-		  width: 100%;
-		  clear: both;
-		  background: #424242;
-		  color: #fff;
-		  min-height:54px;
-		}
+		html {position:relative; min-height: 100%;}
+		.main {overflow:hidden;}
+		.footer {position:absolute; bottom:0; width:100%; clear:both;}
 	</style>
 </head>
 <body>
@@ -49,33 +36,18 @@
     <div class="center">
     
         <h1>Some sticky JS footer</h1>
-        <p>This one doesn't need exact heights for the footer, nice for responsive sites.</p>
-		<p>Non JS version here: <a href="../sticky/">Sticky footer</a>.</p>
+        <p>This one doesn't need exact heights for the footer, nice for responsive sites.<br>
+		Non JS version here: <a href="../sticky/">Sticky footer</a>.</p>
 		
-        <h2>CSS</h2>
-			
-<textarea id="css" name="css">
-<style>		
-	html {
-	  position: relative;
-	  min-height: 100%;
-	}
-	.main {
-	  overflow: hidden;
-	}
-	.footer {
-	  position: absolute;
-	  bottom: 0;
-	  width: 100%;
-	  clear: both;
-	  background: #424242;
-	  color: #fff;
-	}
-</style>
+		<br>
+		<h2>HTML</h2> 
+<textarea id="html" name="html">
+	<div class="main">main</div>
+	<footer class="footer">footer</footer>
 </textarea>
-			<br>
-			<h2>JS</h2>
-            <p>Needs jquery, keep below jquery 2 for IE8.</p>
+
+		<br>
+		<h2>JS</h2>
 <textarea id="js" name="js">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
@@ -97,18 +69,22 @@
 	}, 250);
 </script>
 </textarea>
-			<br>
-			<h2>HTML</h2> 
-<textarea id="html" name="html">
-	<div class="main">main</div>
-	<footer class="footer">footer</footer>
+
+		<br>
+        <h2>CSS</h2>	
+<textarea id="css" name="css">
+<style>		
+	html {position:relative; min-height: 100%;}
+	.main {overflow:hidden;}
+	.footer {position:absolute; bottom:0; width:100%; clear:both;}
+</style>
 </textarea>
-        
+
 	</div>  
 </main>
 
 <footer class="footer">
-    <div class="center">My sticky js footer - <a href="http://fourroses666.github.io" title="Back to the Index">Home</a></div>
+    <div class="center">My sticky js footer - <a href="http://fourroses666.github.io" title="Home">&laquo; Back to the Index</a></div>
 </footer>
 
 
