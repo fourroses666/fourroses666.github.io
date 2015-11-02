@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sticky JS footer</title>
+	<link href="http://fourroses666.github.io/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		var bumpIt = function() {
+			  $('body').css('margin-bottom', $('.footer').height());
+			},
+			didResize = false;
+
+		bumpIt();
+
+		$(window).resize(function() {
+		  didResize = true;
+		});
+		setInterval(function() {
+		  if(didResize) {
+			didResize = false;
+			bumpIt();
+		  }
+		}, 250);
+	</script>
+	<style>		
+		html {
+		  position: relative;
+		  min-height: 100%;
+		}
+		.main {
+		  overflow: hidden;
+		}
+		.footer {
+		  position: absolute;
+		  bottom: 0;
+		  width: 100%;
+		  clear: both;
+		  background: #424242;
+		  color: #fff;
+		  min-height:54px;
+		}
+	</style>
+</head>
+<body>
+
+<main class="main">
+    <div class="center">
+    
+        <h1>Some sticky JS footer</h1>
+        <p>This one doesn't need exact heights for the footer, nice for responsive sites.</p>
+		<p>Non JS version here: <a href="../sticky/">Sticky footer</a>.</p>
+		
+        <h2>CSS</h2>
+			
+<textarea id="css" name="css">
+<style>		
+	html {
+	  position: relative;
+	  min-height: 100%;
+	}
+	.main {
+	  overflow: hidden;
+	}
+	.footer {
+	  position: absolute;
+	  bottom: 0;
+	  width: 100%;
+	  clear: both;
+	  background: #424242;
+	  color: #fff;
+	}
+</style>
+</textarea>
+			<br>
+			<h2>JS</h2>
+            <p>Needs jquery, keep below jquery 2 for IE8.</p>
+<textarea id="js" name="js">
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+	var bumpIt = function() {
+		  $('body').css('margin-bottom', $('.footer').height());
+		},
+		didResize = false;
+
+	bumpIt();
+
+	$(window).resize(function() {
+	  didResize = true;
+	});
+	setInterval(function() {
+	  if(didResize) {
+		didResize = false;
+		bumpIt();
+	  }
+	}, 250);
+</script>
+</textarea>
+			<br>
+			<h2>HTML</h2> 
+<textarea id="html" name="html">
+	<div class="main">main</div>
+	<footer class="footer">footer</footer>
+</textarea>
+        
+	</div>  
+</main>
+
+<footer class="footer">
+    <div class="center">My sticky js footer - <a href="http://fourroses666.github.io" title="Back to the Index">Home</a></div>
+</footer>
+
+
+
+<!-- NEEDED FOR DEMO -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="../../css/styles.css" rel="stylesheet">
+<link href="../../css/codemirror.css" rel="stylesheet">
+<script src="../../js/codemirror.js"></script>
+<script src="../../js/xml.js"></script>
+<script src="../../js/css.js"></script>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("html"), {
+        mode: 'xml',
+        selectionPointer: true,
+        lineNumbers: true
+    });
+	var editor = CodeMirror.fromTextArea(document.getElementById("js"), {
+        mode: 'xml',
+        selectionPointer: true,
+        lineNumbers: true
+    });
+    var editor = CodeMirror.fromTextArea(document.getElementById("css"), {
+        mode: 'css',
+        lineNumbers: true
+    });	
+</script>
+
+</body>
+</html>
