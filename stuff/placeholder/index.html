@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Placeholder focus</title>
+	<link href="http://fourroses666.github.io/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<script src="http://code.jquery.com/jquery-1.11.3.js"></script>
+	<script>
+	$(function(){
+		$('.formfield').data('holder',$('.formfield').attr('placeholder'));
+		$('.formfield').focusin(function(){
+			$(this).attr('placeholder','');
+		});
+		$('.formfield').focusout(function(){
+			$(this).attr('placeholder',$(this).data('holder'));
+		});
+	})
+	</script>
+	<style>
+		input{border:1px solid #ccc; border-radius:2px; padding:3px 8px; min-width:260px; color:#333; font-family: "Montserrat",sans-serif; font-size: 14px; font-weight: 100; line-height: 24px;}
+		label{width:80px; line-height:30px; float:left; margin-bottom:10px;}
+	</style>
+</head>
+<body>
+
+<main class="main">
+    <div class="center">
+    
+        <h1>Placeholder focus</h1>
+        <p>When you click in the field the placeholder tekst is gone.<br>See both inputs with and without the script:</p>
+		<br>
+		<label>With:</label> <input class="formfield" placeholder="Placeholder" type="text" />
+		<div class="clear"></div>
+		<label>Without:</label> <input placeholder="Placeholder" type="text" />
+		<br><br>
+		
+        <h2>HTML + JS</h2>
+            
+<textarea id="html" name="html">
+  <input class="formfield" placeholder="placeholder" type="text" />
+  
+  <script>
+	$(function(){
+		$('.formfield').data('holder',$('.formfield').attr('placeholder'));
+		$('.formfield').focusin(function(){
+			$(this).attr('placeholder','');
+		});
+		$('.formfield').focusout(function(){
+			$(this).attr('placeholder',$(this).data('holder'));
+		});
+	})
+  </script>
+</textarea>
+    
+	</div>  
+</main>
+
+<footer class="footer">
+    <div class="center">Placeholder focus - <a href="http://fourroses666.github.io">Back to the Index</a></div>
+</footer>
+
+
+<!-- NEEDED FOR DEMO -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="../../css/styles.css" rel="stylesheet">
+<link href="../../css/codemirror.css" rel="stylesheet">
+<script src="../../js/codemirror.js"></script>
+<script src="../../js/xml.js"></script>
+<script src="../../js/css.js"></script>
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("html"), {
+        mode: 'xml',
+        selectionPointer: true,
+        lineNumbers: true
+    });
+</script>
+
+</body>
+</html>
